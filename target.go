@@ -27,6 +27,10 @@ func (w TargetService) UpdateTarget(ctx context.Context, id int64, data TargetUp
 	return nil, errors.New("not implemented")
 }
 
+func (w TargetService) CreateToken(ctx context.Context, opts TargetCreateInput) (*TokenResponse, error) {
+	return nil, errors.New("not implemented")
+}
+
 type TargetsListResponse struct{}
 
 type TargetCreateResponse struct{}
@@ -36,5 +40,7 @@ type TargetCreateInput struct{}
 type TargetUpdateInput struct{}
 
 type TargetResponse struct{}
+
+type TokenResponse struct{}
 
 type ListOptions struct{}
