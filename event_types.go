@@ -9,19 +9,19 @@ var _ EventTypes = (*eventTypes)(nil)
 
 type EventTypes interface {
 	ListEventTypes(ctx context.Context, opts *ListOptions) (*EventTypesListResponse, error)
-	CreateEventType(ctx context.Context, opts EventTypeCreateInput) (*EventTypeResponse, error)
+	CreateEventType(ctx context.Context, opts EventTypeCreate) (*EventTypeResponse, error)
 	GetEventType(ctx context.Context, id int64) (*EventTypeResponse, error)
 	DeleteEventType(ctx context.Context, id int64) (*EventTypeResponse, error)
-	UpdateEventType(ctx context.Context, id int64, data EventTypeUpdateInput) (*EventTypeResponse, error)
+	UpdateEventType(ctx context.Context, id int64, data EventTypeUpdate) (*EventTypeResponse, error)
 }
 
 type EventTypesListResponse struct{}
 
 type EventTypeCreateResponse struct{}
 
-type EventTypeCreateInput struct{}
+type EventTypeCreate struct{}
 
-type EventTypeUpdateInput struct{}
+type EventTypeUpdate struct{}
 
 type EventTypeResponse struct{}
 
@@ -33,7 +33,7 @@ func (w eventTypes) ListEventTypes(ctx context.Context, opts *ListOptions) (*Eve
 	return nil, errors.New("not implemented")
 }
 
-func (w eventTypes) CreateEventType(ctx context.Context, opts EventTypeCreateInput) (*EventTypeResponse, error) {
+func (w eventTypes) CreateEventType(ctx context.Context, opts EventTypeCreate) (*EventTypeResponse, error) {
 	return nil, errors.New("not implemented")
 }
 
@@ -45,6 +45,6 @@ func (w eventTypes) DeleteEventType(ctx context.Context, id int64) (*EventTypeRe
 	return nil, errors.New("not implemented")
 }
 
-func (w eventTypes) UpdateEventType(ctx context.Context, id int64, data EventTypeUpdateInput) (*EventTypeResponse, error) {
+func (w eventTypes) UpdateEventType(ctx context.Context, id int64, data EventTypeUpdate) (*EventTypeResponse, error) {
 	return nil, errors.New("not implemented")
 }

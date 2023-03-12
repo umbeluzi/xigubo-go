@@ -9,19 +9,19 @@ var _ Webhooks = (*webhooks)(nil)
 
 type Webhooks interface {
 	ListWebhooks(ctx context.Context, opts *ListOptions) (*WebhooksListResponse, error)
-	CreateWebhook(ctx context.Context, opts WebhookCreateInput) (*WebhookResponse, error)
+	CreateWebhook(ctx context.Context, opts WebhookCreate) (*WebhookResponse, error)
 	GetWebhook(ctx context.Context, id int64) (*WebhookResponse, error)
 	DeleteWebhook(ctx context.Context, id int64) (*WebhookResponse, error)
-	UpdateWebhook(ctx context.Context, id int64, data WebhookUpdateInput) (*WebhookResponse, error)
+	UpdateWebhook(ctx context.Context, id int64, data WebhookUpdate) (*WebhookResponse, error)
 }
 
 type WebhooksListResponse struct{}
 
 type WebhookCreateResponse struct{}
 
-type WebhookCreateInput struct{}
+type WebhookCreate struct{}
 
-type WebhookUpdateInput struct{}
+type WebhookUpdate struct{}
 
 type WebhookResponse struct{}
 
@@ -33,7 +33,7 @@ func (w webhooks) ListWebhooks(ctx context.Context, opts *ListOptions) (*Webhook
 	return nil, errors.New("not implemented")
 }
 
-func (w webhooks) CreateWebhook(ctx context.Context, opts WebhookCreateInput) (*WebhookResponse, error) {
+func (w webhooks) CreateWebhook(ctx context.Context, opts WebhookCreate) (*WebhookResponse, error) {
 	return nil, errors.New("not implemented")
 }
 
@@ -45,6 +45,6 @@ func (w webhooks) DeleteWebhook(ctx context.Context, id int64) (*WebhookResponse
 	return nil, errors.New("not implemented")
 }
 
-func (w webhooks) UpdateWebhook(ctx context.Context, id int64, data WebhookUpdateInput) (*WebhookResponse, error) {
+func (w webhooks) UpdateWebhook(ctx context.Context, id int64, data WebhookUpdate) (*WebhookResponse, error) {
 	return nil, errors.New("not implemented")
 }
