@@ -1,5 +1,7 @@
-package plumber
+package goswitch
 
 type Client struct {
-	Webhooks WebhookService
+	Webhooks Webhooks
+	Events   Events
+	Targets  Targets
 }

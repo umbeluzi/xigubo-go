@@ -1,22 +1,14 @@
-package plumber
+package goswitch
 
 import (
 	"context"
 	"errors"
 )
 
-type EventService struct{}
-
-func (w EventService) ListEvents(ctx context.Context, opts *ListOptions) (*EventsListResponse, error) {
-	return nil, errors.New("not implemented")
-}
-
-func (w EventService) CreateEvent(ctx context.Context, opts EventCreateInput) (*EventResponse, error) {
-	return nil, errors.New("not implemented")
-}
-
-func (w EventService) GetEvent(ctx context.Context, id int64) (*EventResponse, error) {
-	return nil, errors.New("not implemented")
+type Events interface {
+	ListEvents(ctx context.Context, opts *ListOptions) (*EventsListResponse, error)
+	CreateEvent(ctx context.Context, opts EventCreateInput) (*EventResponse, error)
+	GetEvent(ctx context.Context, id int64) (*EventResponse, error)
 }
 
 type EventsListResponse struct{}
@@ -29,4 +21,18 @@ type EventUpdateInput struct{}
 
 type EventResponse struct{}
 
-type ListOptions struct{}
+type events struct {
+	client *Client
+}
+
+func (e events) ListEvents(ctx context.Context, opts *ListOptions) (*EventsListResponse, error) {
+	return nil, errors.New("not implemented")
+}
+
+func (e events) CreateEvent(ctx context.Context, opts EventCreateInput) (*EventResponse, error) {
+	return nil, errors.New("not implemented")
+}
+
+func (e events) GetEvent(ctx context.Context, id int64) (*EventResponse, error) {
+	return nil, errors.New("not implemented")
+}
