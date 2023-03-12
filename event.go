@@ -5,6 +5,8 @@ import (
 	"errors"
 )
 
+var _ Events = (*events)(nil)
+
 type Events interface {
 	ListEvents(ctx context.Context, opts *ListOptions) (*EventsListResponse, error)
 	CreateEvent(ctx context.Context, opts EventCreateInput) (*EventResponse, error)

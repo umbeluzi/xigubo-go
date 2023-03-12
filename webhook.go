@@ -5,6 +5,8 @@ import (
 	"errors"
 )
 
+var _ Webhooks = (*webhooks)(nil)
+
 type Webhooks interface {
 	ListWebhooks(ctx context.Context, opts *ListOptions) (*WebhooksListResponse, error)
 	CreateWebhook(ctx context.Context, opts WebhookCreateInput) (*WebhookResponse, error)

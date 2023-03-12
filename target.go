@@ -5,6 +5,8 @@ import (
 	"errors"
 )
 
+var _ Targets = (*targets)(nil)
+
 type Targets interface {
 	ListTargets(ctx context.Context, opts *ListOptions) (*TargetsListResponse, error)
 	CreateTarget(ctx context.Context, opts TargetCreateInput) (*TargetResponse, error)
