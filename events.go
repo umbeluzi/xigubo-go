@@ -38,3 +38,11 @@ func (e events) CreateEvent(ctx context.Context, opts EventCreateInput) (*EventR
 func (e events) GetEvent(ctx context.Context, id int64) (*EventResponse, error) {
 	return nil, errors.New("not implemented")
 }
+
+func (e events) ResendEvent(ctx context.Context, id int64) (*EventResponse, error) {
+	return nil, errors.New("not implemented")
+}
+
+func (e events) CancelEvent(ctx context.Context, id int64) (*EventResponse, error) {
+	return nil, errors.New("not implemented")
+}
