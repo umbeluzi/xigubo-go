@@ -13,8 +13,8 @@ type Subscribers interface {
 	GetSubscriber(ctx context.Context, id int64) (*SubscriberResponse, error)
 	DeleteSubscriber(ctx context.Context, id int64) (*SubscriberResponse, error)
 	UpdateSubscriber(ctx context.Context, id int64, data SubscriberUpdateInput) (*SubscriberResponse, error)
-	CreateToken(ctx context.Context, opts SubscriberCreateInput) (*TokenResponse, error)
-	GetTokenInfo(ctx context.Context, id int64) (*TokenInfoResponse, error)
+	CreateCredentials(ctx context.Context, opts SubscriberCreateInput) (*CredentialsResponse, error)
+	GetCredentialsInfo(ctx context.Context, id int64) (*CredentialsInfoResponse, error)
 }
 
 type SubscribersListResponse struct{}
@@ -27,9 +27,9 @@ type SubscriberUpdateInput struct{}
 
 type SubscriberResponse struct{}
 
-type TokenResponse struct{}
+type CredentialsResponse struct{}
 
-type TokenInfoResponse struct{}
+type CredentialsInfoResponse struct{}
 
 type subscribers struct {
 	client *Client
@@ -55,10 +55,10 @@ func (t subscribers) UpdateSubscriber(ctx context.Context, id int64, data Subscr
 	return nil, errors.New("not implemented")
 }
 
-func (t subscribers) CreateToken(ctx context.Context, opts SubscriberCreateInput) (*TokenResponse, error) {
+func (t subscribers) CreateCredentials(ctx context.Context, opts SubscriberCreateInput) (*CredentialsResponse, error) {
 	return nil, errors.New("not implemented")
 }
 
-func (t subscribers) GetTokenInfo(ctx context.Context, id int64) (*TokenInfoResponse, error) {
+func (t subscribers) GetCredentialsInfo(ctx context.Context, id int64) (*CredentialsInfoResponse, error) {
 	return nil, errors.New("not implemented")
 }
