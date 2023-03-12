@@ -1,4 +1,4 @@
-package goswitch
+package xigubo
 
 type Client struct {
 	Webhooks Webhooks

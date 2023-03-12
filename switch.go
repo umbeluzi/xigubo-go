@@ -1,4 +1,4 @@
-package goswitch
+package xigubo
 
 type ListOptions struct {
 	Page int `url:"page"`
