@@ -5,60 +5,60 @@ import (
 	"errors"
 )
 
-var _ Subscribers = (*subscribers)(nil)
+var _ Subscriptions = (*subscriptions)(nil)
 
-type Subscribers interface {
-	ListSubscribers(ctx context.Context, opts *ListOptions) (*SubscribersListResponse, error)
-	CreateSubscriber(ctx context.Context, opts SubscriberCreateInput) (*SubscriberResponse, error)
-	GetSubscriber(ctx context.Context, id int64) (*SubscriberResponse, error)
-	DeleteSubscriber(ctx context.Context, id int64) (*SubscriberResponse, error)
-	UpdateSubscriber(ctx context.Context, id int64, data SubscriberUpdateInput) (*SubscriberResponse, error)
-	CreateCredentials(ctx context.Context, opts SubscriberCreateInput) (*CredentialsResponse, error)
+type Subscriptions interface {
+	ListSubscriptions(ctx context.Context, opts *ListOptions) (*SubscriptionsListResponse, error)
+	CreateSubscription(ctx context.Context, opts SubscriptionCreateInput) (*SubscriptionResponse, error)
+	GetSubscription(ctx context.Context, id int64) (*SubscriptionResponse, error)
+	DeleteSubscription(ctx context.Context, id int64) (*SubscriptionResponse, error)
+	UpdateSubscription(ctx context.Context, id int64, data SubscriptionUpdateInput) (*SubscriptionResponse, error)
+	CreateCredentials(ctx context.Context, opts SubscriptionCreateInput) (*CredentialsResponse, error)
 	GetCredentialsInfo(ctx context.Context, id int64) (*CredentialsInfoResponse, error)
 }
 
-type SubscribersListResponse struct{}
+type SubscriptionsListResponse struct{}
 
-type SubscriberCreateResponse struct{}
+type SubscriptionCreateResponse struct{}
 
-type SubscriberCreateInput struct{}
+type SubscriptionCreateInput struct{}
 
-type SubscriberUpdateInput struct{}
+type SubscriptionUpdateInput struct{}
 
-type SubscriberResponse struct{}
+type SubscriptionResponse struct{}
 
 type CredentialsResponse struct{}
 
 type CredentialsInfoResponse struct{}
 
-type subscribers struct {
+type subscriptions struct {
 	client *Client
 }
 
-func (t subscribers) ListSubscribers(ctx context.Context, opts *ListOptions) (*SubscribersListResponse, error) {
+func (t subscriptions) ListSubscriptions(ctx context.Context, opts *ListOptions) (*SubscriptionsListResponse, error) {
 	return nil, errors.New("not implemented")
 }
 
-func (t subscribers) CreateSubscriber(ctx context.Context, opts SubscriberCreateInput) (*SubscriberResponse, error) {
+func (t subscriptions) CreateSubscription(ctx context.Context, opts SubscriptionCreateInput) (*SubscriptionResponse, error) {
 	return nil, errors.New("not implemented")
 }
 
-func (t subscribers) GetSubscriber(ctx context.Context, id int64) (*SubscriberResponse, error) {
+func (t subscriptions) GetSubscription(ctx context.Context, id int64) (*SubscriptionResponse, error) {
 	return nil, errors.New("not implemented")
 }
 
-func (t subscribers) DeleteSubscriber(ctx context.Context, id int64) (*SubscriberResponse, error) {
+func (t subscriptions) DeleteSubscription(ctx context.Context, id int64) (*SubscriptionResponse, error) {
 	return nil, errors.New("not implemented")
 }
 
-func (t subscribers) UpdateSubscriber(ctx context.Context, id int64, data SubscriberUpdateInput) (*SubscriberResponse, error) {
+func (t subscriptions) UpdateSubscription(ctx context.Context, id int64, data SubscriptionUpdateInput) (*SubscriptionResponse, error) {
 	return nil, errors.New("not implemented")
 }
 
-func (t subscribers) CreateCredentials(ctx context.Context, opts SubscriberCreateInput) (*CredentialsResponse, error) {
+func (t subscriptions) CreateCredentials(ctx context.Context, opts SubscriptionCreateInput) (*CredentialsResponse, error) {
 	return nil, errors.New("not implemented")
 }
 
-func (t subscribers) GetCredentialsInfo(ctx context.Context, id int64) (*CredentialsInfoResponse, error) {
+func (t subscriptions) GetCredentialsInfo(ctx context.Context, id int64) (*CredentialsInfoResponse, error) {
 	return nil, errors.New("not implemented")
 }

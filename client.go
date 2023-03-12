@@ -20,7 +20,7 @@ func NewClient(cfg *Config) (*Client, error) {
 
 	client.Events = events{client: client}
 	client.Webhooks = webhooks{client: client}
-	client.Targets = subscribers{client: client}
+	client.Targets = subscriptions{client: client}
 
 	return client, nil
 }
